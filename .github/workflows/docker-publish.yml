@@ -53,7 +53,7 @@ jobs:
       - name: Anchore SBOM
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /tmp
-          syft $IMAGE_NAME >> README.md
+          /tmp/syft $IMAGE_NAME >> README.md
           git status
           pwd
 
