@@ -53,6 +53,8 @@ jobs:
       - name: Anchore SBOM
         run: |
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /tmp
+	  cp -f README.md.template README.md
+	  echo '' >> README.md
           echo '```' >> README.md
           echo "SYFT OUTPUT" >> README.md
           /tmp/syft $IMAGE_NAME >> README.md
